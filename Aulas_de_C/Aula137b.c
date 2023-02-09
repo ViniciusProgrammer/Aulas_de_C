@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
+//Outra forma de se copiar uma string para a outra através de caracter por caracter
+
 int main(){
 
     char palavras1[100] = {"manchester united"}, palavras2[100] = {"santos"};
