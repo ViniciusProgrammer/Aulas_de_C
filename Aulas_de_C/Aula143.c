@@ -3,14 +3,35 @@
 
 int main()
 {
+    //Forma simplificada de se fazer esse código
     
     char palavra[30], copia[30];
-    int i, tam, iguais = 0;
+    int i = 0, tam, iguais = 0;
 
     printf("Informe uma palavra: ");
     scanf("%s", palavra);
 
     tam = strlen(palavra);
+    tam--;
+
+    while(tam >= i){
+        if(palavra[i] != palavra[tam]){
+            iguais++;
+        }
+        i++;
+        tam--;
+    }
+
+    if(iguais == 0){
+        printf("Palavras palindromas!\n");
+    }
+    else{
+        printf("Não são palindromas\n");
+    }
+
+    /*
+    
+    Forma mais complexa de fazer esse código
 
     for(i = 0; i < strlen(palavra); i++){
         copia[i] = palavra[tam - 1];
@@ -36,7 +57,7 @@ int main()
     else{
         printf("\nEssa palavra não é um palindromo!\n");
     }
-
+    */
 
     return 0;
 }
