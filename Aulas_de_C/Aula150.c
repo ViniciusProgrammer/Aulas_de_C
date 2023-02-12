@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+//Função para soma das linhas da matriz
 int somalinha(int matriz[3][3], int l){
     int c, soma = 0;
 
@@ -10,6 +11,19 @@ int somalinha(int matriz[3][3], int l){
     return soma;
 }
 
+//Função para imprimir os valores da matriz
+int imprimirmatriz(int m[3][3]){
+    int l, c;
+
+    for(l = 0; l < 3; l++){
+        for(c = 0; c < 3; c++){
+            printf("%d ", m[l][c]);
+        }
+        printf("\n");
+    }
+}
+
+//Programa Principal.
 int main()
 {
     int mat[3][3];
