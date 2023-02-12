@@ -1,45 +1,46 @@
 #include <stdio.h>
-#include <string.h>
-#include <ctype.h>
 
-//Aula 151 - Como fazer um procedimento para converter uma string em maiúsculo ou minúsculo
+int somacoluna(int mat[3][3], int col){
+    int l, soma = 0;
 
-//procedimento que converte uma string para maiusculo
-void maiusculo(char s1[], char s2[]){
-
-    int i = 0;
-
-    while(s1[i] != '\0'){
-        s2[i] = toupper(s1[i]);
-        i++;
+    for(l = 0; l < 3; l++){
+        soma += mat[l][col];
     }
-    s2[i] = '\0'; //Meu vetor s2 precisa receber o caracter de fim de string, para assim finalizarmos a copia de uma string para a outra, que nesse caso além de copiar estamos convertendo a string para maiúsculo com a função toupper().
+
+    return soma;
+
 }
 
-void minusculo(char s1[], char s2[]){
-    int i = 0;
+void imprimirmatriz(int x[3][3]){
+    int l, c;
 
-    while(s1[i] != '\0'){
-        s2[i] = tolower(s1[i]);
-        i++;
+    printf("\n");
+
+    for(l = 0; l < 3; l++){
+        for(c = 0; c < 3; c++){
+            printf("%d ", x[l][c]);
+        }
+        printf("\n");
     }
-    s2[i] = '\0';
 }
 
 int main()
-{   
-    char str1[] = {"Ola, Bom Dia!"};
-    char str2[50];
+{
+    int matriz[3][3];
+    int i, j;
 
-    printf("%s\n", str1);
+    for(i = 0; i < 3; i++){
+        for(j = 0; j < 3; j++){
+            printf("Informe um valor na linha %d coluna %d: ", i, j);
+            scanf("%d", &matriz[i][j]);
+        }
+    }
 
-    maiusculo(str1, str2);
+    for(j = 0; j < 3; j++){
+        printf("Soma da coluna %d = %d\n", j, somacoluna(matriz, j));
+    }
 
-    printf("%s\n", str2);
+    imprimirmatriz(matriz);
 
-    minusculo(str1, str2);
-
-    printf("%s\n", str2);
-    
     return 0;
 }
