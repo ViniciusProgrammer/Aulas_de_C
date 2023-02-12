@@ -4,6 +4,8 @@
 int somalinha(int matriz[3][3], int l){
     int c, soma = 0;
 
+    printf("\n");
+
     for(c = 0; c < 3; c++){
         soma += matriz[l][c];
     }
@@ -11,9 +13,11 @@ int somalinha(int matriz[3][3], int l){
     return soma;
 }
 
-//Função para imprimir os valores da matriz
-int imprimirmatriz(int m[3][3]){
+//Procedimento para imprimir os valores da matriz
+void imprimirmatriz(int m[3][3]){
     int l, c;
+
+    printf("\n");
 
     for(l = 0; l < 3; l++){
         for(c = 0; c < 3; c++){
@@ -39,6 +43,8 @@ int main()
     for(i = 0; i < 3; i++){
         printf("A soma da linha %d = %d\n", i, somalinha(mat, i));
     }
+
+    imprimirmatriz(mat);
 
     return 0;
 }
