@@ -8,7 +8,6 @@ int somacoluna(int mat[3][3], int col){
     }
 
     return soma;
-
 }
 
 void imprimirmatriz(int x[3][3]){
